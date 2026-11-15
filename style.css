@@ -1,0 +1,149 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary-gold: #e08e26;
+  --syrup-brown: #4a2511;
+  --cream-bg: #fffaf0;
+  --soft-butter: #fce8b2;
+  --text-dark: #2b180e;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--cream-bg);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .navbar-brand {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: rgba(255, 250, 240, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(74, 37, 17, 0.08);
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--syrup-brown) !important;
+}
+
+.navbar-brand span {
+  color: var(--primary-gold);
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--syrup-brown) !important;
+  margin: 0 10px;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-gold);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Custom Buttons with Hover Animation */
+.btn-syrup {
+  background-color: var(--primary-gold);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-syrup:hover {
+  background-color: var(--syrup-brown);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(74, 37, 17, 0.25);
+}
+
+/* Hero Section & Floating Animation */
+.hero-section {
+  min-height: 90vh;
+  background: linear-gradient(135deg, var(--cream-bg) 60%, var(--soft-butter) 100%);
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+}
+
+@keyframes floatPancake {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.hero-img {
+  border-radius: 30px;
+  box-shadow: 0 25px 50px rgba(74, 37, 17, 0.2);
+  animation: floatPancake 4.5s ease-in-out infinite;
+}
+
+/* Cards & Hover Zoom */
+.pancake-card {
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pancake-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(74, 37, 17, 0.15);
+}
+
+.pancake-card img {
+  height: 230px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.pancake-card:hover img {
+  transform: scale(1.08);
+}
+
+.price-badge {
+  background-color: var(--soft-butter);
+  color: var(--syrup-brown);
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
+}
+
+/* Page Header Banner (For Inner Pages) */
+.page-header {
+  background: linear-gradient(rgba(74, 37, 17, 0.75), rgba(74, 37, 17, 0.75)),
+              url('https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=1600&q=80') center/cover;
+  padding: 130px 0 80px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: var(--syrup-brown);
+  color: var(--cream-bg);
+}
